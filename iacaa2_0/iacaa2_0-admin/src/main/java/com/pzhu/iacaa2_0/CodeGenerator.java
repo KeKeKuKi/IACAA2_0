@@ -70,6 +70,7 @@ public class CodeGenerator {
         gc.setIdType(IdType.AUTO);
         mpg.setGlobalConfig(gc);
 
+
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
