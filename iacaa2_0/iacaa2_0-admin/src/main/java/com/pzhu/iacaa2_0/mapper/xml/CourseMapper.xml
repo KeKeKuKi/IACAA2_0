@@ -14,8 +14,24 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,
-        name, image, edit_user_id, created_date, update_date
+        id,name, image, edit_user_id, created_date, update_date
     </sql>
+
+    <select id="fuzzyQuery" parameterType="com.pzhu.iacaa2_0.entity.Course" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_course
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="word != null and word !=''">
+                    AND name like CONCAT(CONCAT('%',#{word}),'%')
+                </if>
+                <if test="name != null">
+                    AND name = #{name}
+                </if>
+            </trim>
+        </where>
+        ORDER BY when_updated DESC
+    </select>
 
 </mapper>

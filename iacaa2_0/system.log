@@ -1,400 +1,35 @@
-2021-01-19 11:27:50.844  INFO 3804 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 3804 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-01-19 11:27:50.851  INFO 3804 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-01-19 11:27:52.337  WARN 3804 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:27:52.360  WARN 3804 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:27:52.698  INFO 3804 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$c2527d05] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:27:52.740  INFO 3804 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:27:52.787  INFO 3804 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:27:53.302  INFO 3804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-01-19 11:27:53.314  INFO 3804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 11:27:53.314  INFO 3804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-01-19 11:27:53.473  INFO 3804 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 11:27:53.473  INFO 3804 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2542 ms
-2021-01-19 11:27:53.486 ERROR 3804 --- [main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'getShiroFilterFactoryBean': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalArgumentException: There is no filter with name 'jwt' to apply to chain [/**] in the pool of available Filters.  Ensure a filter with that name/path has first been registered with the addFilter method(s).
-2021-01-19 11:27:53.537  INFO 3804 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-01-19 11:27:53.599  WARN 3804 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-2021-01-19 11:27:53.610  INFO 3804 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-01-19 11:27:53.625 ERROR 3804 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at com.pzhu.iacaa2_0.Iacaa20Application.main(Iacaa20Application.java:11) [classes/:na]
-Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	... 8 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'getShiroFilterFactoryBean': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalArgumentException: There is no filter with name 'jwt' to apply to chain [/**] in the pool of available Filters.  Ensure a filter with that name/path has first been registered with the addFilter method(s).
-	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:178) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1818) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1266) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:260) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5140) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_241]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_241]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:468) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
-	... 13 common frames omitted
-Caused by: java.lang.IllegalArgumentException: There is no filter with name 'jwt' to apply to chain [/**] in the pool of available Filters.  Ensure a filter with that name/path has first been registered with the addFilter method(s).
-	at org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.addToChain(DefaultFilterChainManager.java:265) ~[shiro-all-1.2.4.jar:1.2.4]
-	at org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:148) ~[shiro-all-1.2.4.jar:1.2.4]
-	at org.apache.shiro.spring.web.ShiroFilterFactoryBean.createFilterChainManager(ShiroFilterFactoryBean.java:397) ~[shiro-all-1.2.4.jar:1.2.4]
-	at org.apache.shiro.spring.web.ShiroFilterFactoryBean.createInstance(ShiroFilterFactoryBean.java:437) ~[shiro-all-1.2.4.jar:1.2.4]
-	at org.apache.shiro.spring.web.ShiroFilterFactoryBean.getObject(ShiroFilterFactoryBean.java:343) ~[shiro-all-1.2.4.jar:1.2.4]
-	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:171) ~[spring-beans-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	... 50 common frames omitted
-
-2021-01-19 11:28:59.782  INFO 11788 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 11788 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-01-19 11:28:59.786  INFO 11788 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-01-19 11:29:00.562  WARN 11788 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:29:00.585  WARN 11788 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:29:00.938  INFO 11788 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$278702e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:29:00.996  INFO 11788 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:29:01.020  INFO 11788 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:29:01.273  INFO 11788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-01-19 11:29:01.283  INFO 11788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 11:29:01.284  INFO 11788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-01-19 11:29:01.408  INFO 11788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 11:29:01.409  INFO 11788 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1548 ms
-2021-01-19 11:29:03.500  INFO 11788 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 11:29:03.941  INFO 11788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
-2021-01-19 11:29:03.945  INFO 11788 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.891 seconds (JVM running for 6.244)
-2021-01-19 11:29:23.052  INFO 11788 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 11:29:23.053  INFO 11788 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 11:29:23.060  INFO 11788 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2021-01-19 11:29:23.108  WARN 11788 --- [http-nio-9999-exec-1] c.p.i.c.i.AuthenticationInterceptor      : 127.0.0.1尝试非法访问资源
-2021-01-19 11:29:23.122 ERROR 11788 --- [http-nio-9999-exec-1] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
-
-java.lang.RuntimeException: 无token！
-	at com.pzhu.iacaa2_0.config.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:45) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 11:30:50.753  INFO 11788 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 11:30:56.809  INFO 4164 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 4164 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-01-19 11:30:56.814  INFO 4164 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-01-19 11:30:57.597  WARN 4164 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:30:57.618  WARN 4164 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 11:30:57.901  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$efd13a3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.048  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.052  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$e5f6612f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.054  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.059  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.086  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:58.094  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.035  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.041  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.250  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.252  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.254  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.285  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.310  INFO 4164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 11:30:59.541  INFO 4164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-01-19 11:30:59.550  INFO 4164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 11:30:59.550  INFO 4164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-01-19 11:30:59.698  INFO 4164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 11:30:59.698  INFO 4164 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2811 ms
-2021-01-19 11:31:00.249  INFO 4164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 11:31:00.546  INFO 4164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
-2021-01-19 11:31:00.550  INFO 4164 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.438 seconds (JVM running for 5.831)
-2021-01-19 11:31:15.270  INFO 4164 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 11:31:15.270  INFO 4164 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 11:31:15.281  INFO 4164 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2021-01-19 11:31:15.545  INFO 4164 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 11:31:15.799  INFO 4164 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 11:31:42.575  INFO 4164 --- [http-nio-9999-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: The HTTP header line [<> 2021-01-19T113116.200.json: ] does not conform to RFC 7230 and has been ignored.
-	at org.apache.coyote.http11.Http11InputBuffer.skipLine(Http11InputBuffer.java:995) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:847) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:584) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:283) ~[tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 13:13:20.348 ERROR 4164 --- [http-nio-9999-exec-5] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
-
-java.lang.RuntimeException: token已过期！
-	at com.pzhu.iacaa2_0.config.token.TokenService.checkToken(TokenService.java:45) ~[classes/:na]
-	at com.pzhu.iacaa2_0.config.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:47) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 13:13:30.717 ERROR 4164 --- [http-nio-9999-exec-6] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
-
-java.lang.RuntimeException: token已过期！
-	at com.pzhu.iacaa2_0.config.token.TokenService.checkToken(TokenService.java:45) ~[classes/:na]
-	at com.pzhu.iacaa2_0.config.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:47) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 13:14:13.110  WARN 4164 --- [http-nio-9999-exec-7] c.p.i.c.i.AuthenticationInterceptor      : 127.0.0.1尝试非法访问资源
-2021-01-19 13:14:13.111 ERROR 4164 --- [http-nio-9999-exec-7] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
-
-java.lang.RuntimeException: 无token！
-	at com.pzhu.iacaa2_0.config.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:45) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 13:19:11.061  WARN 4164 --- [http-nio-9999-exec-8] c.p.i.c.i.AuthenticationInterceptor      : 127.0.0.1尝试非法访问资源
-2021-01-19 13:19:11.061 ERROR 4164 --- [http-nio-9999-exec-8] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
-
-java.lang.RuntimeException: 无token！
-	at com.pzhu.iacaa2_0.config.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:45) ~[classes/:na]
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
-
-2021-01-19 14:43:04.975  INFO 4164 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:43:04.977  INFO 4164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-19 14:43:04.985  INFO 4164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-01-19 14:43:09.824  INFO 13404 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 13404 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-01-19 14:43:09.827  INFO 13404 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-01-19 14:43:10.742  WARN 13404 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 14:43:10.763  WARN 13404 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 14:43:11.076  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$3de08b8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.241  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.246  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$3405b27e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.247  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.255  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.284  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:11.295  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.176  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.182  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.375  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.378  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.379  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.405  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.427  INFO 13404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:43:12.671  INFO 13404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-01-19 14:43:12.683  INFO 13404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 14:43:12.684  INFO 13404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-01-19 14:43:12.874  INFO 13404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 14:43:12.874  INFO 13404 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2978 ms
-2021-01-19 14:43:13.464  INFO 13404 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:43:13.814  INFO 13404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
-2021-01-19 14:43:13.818  INFO 13404 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.858 seconds (JVM running for 6.612)
-2021-01-19 14:48:11.854  INFO 13404 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 14:48:11.855  INFO 13404 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 14:48:11.862  INFO 13404 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2021-01-19 14:48:12.143  INFO 13404 --- [http-nio-9999-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 14:48:12.264  INFO 13404 --- [http-nio-9999-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 14:55:54.121  WARN 13404 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s745ms649µs900ns).
-2021-01-19 14:58:27.288  INFO 13404 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:58:27.289  INFO 13404 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-19 14:58:27.302  INFO 13404 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-01-19 14:58:33.672  INFO 8960 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 8960 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-01-19 14:58:33.676  INFO 8960 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-01-19 14:58:34.438  WARN 8960 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 14:58:34.461  WARN 8960 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-01-19 14:58:34.764  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$b81d07ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.917  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.922  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$ae422ede] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.923  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.930  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.959  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:34.967  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:35.910  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:35.917  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.119  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.122  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.123  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.149  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.170  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-01-19 14:58:36.451  INFO 8960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-01-19 14:58:36.461  INFO 8960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-01-19 14:58:36.462  INFO 8960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-01-19 14:58:36.616  INFO 8960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-01-19 14:58:36.616  INFO 8960 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2880 ms
-2021-01-19 14:58:37.315  INFO 8960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-19 14:58:37.650  INFO 8960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
-2021-01-19 14:58:37.655  INFO 8960 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.773 seconds (JVM running for 6.191)
-2021-01-19 14:59:39.591  INFO 8960 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-01-19 14:59:39.591  INFO 8960 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-01-19 14:59:39.600  INFO 8960 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2021-01-19 14:59:39.660 ERROR 8960 --- [http-nio-9999-exec-1] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
+2021-01-20 15:13:39.413  INFO 8896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 8896 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-01-20 15:13:39.424  INFO 8896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-01-20 15:13:40.419  WARN 8896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:13:40.444  WARN 8896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:13:40.737  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$3d323cd9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.876  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.880  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$335763ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.882  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.887  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.912  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:40.920  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.758  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.764  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.943  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.945  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.946  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.967  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:41.987  INFO 8896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:13:42.215  INFO 8896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-01-20 15:13:42.227  INFO 8896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-20 15:13:42.227  INFO 8896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-01-20 15:13:42.386  INFO 8896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-20 15:13:42.386  INFO 8896 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2887 ms
+2021-01-20 15:13:43.210  INFO 8896 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:13:43.832  INFO 8896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-01-20 15:13:43.835  INFO 8896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 5.108 seconds (JVM running for 6.515)
+2021-01-20 15:14:03.843  INFO 8896 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-20 15:14:03.844  INFO 8896 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-20 15:14:03.853  INFO 8896 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-01-20 15:14:03.882  WARN 8896 --- [http-nio-9999-exec-1] c.p.i.c.i.AuthenticationInterceptor      : 127.0.0.1尝试非法访问资源
+2021-01-20 15:14:03.902 ERROR 8896 --- [http-nio-9999-exec-1] c.p.i.controller.CourseController        : 无token！
+2021-01-20 15:14:53.925 ERROR 8896 --- [http-nio-9999-exec-2] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
 
 org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.pzhu.iacaa2_0.common.ActionResult com.pzhu.iacaa2_0.controller.UserController.list(com.pzhu.iacaa2_0.entity.User,javax.servlet.http.HttpServletRequest) throws java.io.IOException
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
@@ -456,8 +91,323 @@ org.springframework.http.converter.HttpMessageNotReadableException: Required req
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
 
-2021-01-19 15:00:09.221  INFO 8960 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-19 15:00:09.352  INFO 8960 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-19 17:41:29.909  INFO 8960 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-19 17:41:29.911  INFO 8960 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-19 17:41:29.915  INFO 8960 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-20 15:16:09.513 ERROR 8896 --- [http-nio-9999-exec-4] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
+
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.pzhu.iacaa2_0.common.ActionResult com.pzhu.iacaa2_0.controller.UserController.list(com.pzhu.iacaa2_0.entity.User,javax.servlet.http.HttpServletRequest) throws java.io.IOException
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2021-01-20 15:16:22.343 ERROR 8896 --- [http-nio-9999-exec-5] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
+
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.pzhu.iacaa2_0.common.ActionResult com.pzhu.iacaa2_0.controller.UserController.list(com.pzhu.iacaa2_0.entity.User,javax.servlet.http.HttpServletRequest) throws java.io.IOException
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2021-01-20 15:16:36.756 ERROR 8896 --- [http-nio-9999-exec-7] c.p.i.config.GlobalExceptionHandler      : 运行时异常：----------------{}
+
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.pzhu.iacaa2_0.common.ActionResult com.pzhu.iacaa2_0.controller.UserController.list(com.pzhu.iacaa2_0.entity.User,javax.servlet.http.HttpServletRequest) throws java.io.IOException
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-all-1.2.4.jar:1.2.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2021-01-20 15:17:11.190  INFO 8896 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:17:17.069  INFO 3028 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 3028 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-01-20 15:17:17.085  INFO 3028 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-01-20 15:17:17.835  WARN 3028 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:17:17.859  WARN 3028 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:17:18.192  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$c3efb85f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.352  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.359  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$ba14df50] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.361  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.367  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.402  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:18.413  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.241  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.245  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.418  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.420  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.421  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.440  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.460  INFO 3028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:17:19.672  INFO 3028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-01-20 15:17:19.682  INFO 3028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-20 15:17:19.682  INFO 3028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-01-20 15:17:19.830  INFO 3028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-20 15:17:19.831  INFO 3028 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2681 ms
+2021-01-20 15:17:20.441  INFO 3028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:17:20.732  INFO 3028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-01-20 15:17:20.736  INFO 3028 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.345 seconds (JVM running for 5.663)
+2021-01-20 15:17:30.090  INFO 3028 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-20 15:17:30.090  INFO 3028 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-20 15:17:30.099  INFO 3028 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-01-20 15:17:30.411  INFO 3028 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-20 15:17:30.631  INFO 3028 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-20 15:18:48.000 ERROR 3028 --- [http-nio-9999-exec-6] c.p.i.controller.CourseController        : token已过期！
+2021-01-20 15:18:57.155 ERROR 3028 --- [http-nio-9999-exec-9] c.p.i.controller.CourseController        : Invalid bound statement (not found): com.pzhu.iacaa2_0.mapper.CourseMapper.fuzzyQuery
+2021-01-20 15:19:29.041  INFO 3028 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:19:29.042  INFO 3028 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-20 15:19:29.049  INFO 3028 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-20 15:19:33.125  INFO 7836 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 7836 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-01-20 15:19:33.129  INFO 7836 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-01-20 15:19:33.973  WARN 7836 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:19:33.995  WARN 7836 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:19:34.281  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$2eec0d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.414  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.418  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$f913e7c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.420  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.427  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.454  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:34.462  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.291  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.296  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.463  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.465  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.466  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.487  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.507  INFO 7836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:19:35.719  INFO 7836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-01-20 15:19:35.729  INFO 7836 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-20 15:19:35.729  INFO 7836 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-01-20 15:19:35.877  INFO 7836 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-20 15:19:35.878  INFO 7836 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2652 ms
+2021-01-20 15:19:36.419  INFO 7836 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:19:36.702  INFO 7836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-01-20 15:19:36.706  INFO 7836 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.304 seconds (JVM running for 5.729)
+2021-01-20 15:19:43.613  INFO 7836 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-20 15:19:43.613  INFO 7836 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-20 15:19:43.625  INFO 7836 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2021-01-20 15:19:43.784  INFO 7836 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-20 15:19:43.920  INFO 7836 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-01-20 15:19:56.447 ERROR 7836 --- [http-nio-9999-exec-3] c.p.i.controller.CourseController        : Invalid bound statement (not found): com.pzhu.iacaa2_0.mapper.CourseMapper.fuzzyQuery
+2021-01-20 15:22:03.271  INFO 7836 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:22:03.273  INFO 7836 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-20 15:22:03.287  INFO 7836 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-20 15:22:07.311  INFO 10896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 10896 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-01-20 15:22:07.316  INFO 10896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-01-20 15:22:08.220  WARN 10896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:22:08.247  WARN 10896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:22:08.589  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$81e69264] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.720  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.724  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$780bb955] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.726  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.731  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.755  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:08.763  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.588  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.593  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.766  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.768  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.769  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.791  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:09.811  INFO 10896 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:22:10.018  INFO 10896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-01-20 15:22:10.028  INFO 10896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-20 15:22:10.028  INFO 10896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-01-20 15:22:10.177  INFO 10896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-20 15:22:10.177  INFO 10896 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2769 ms
+2021-01-20 15:22:10.746  INFO 10896 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:22:11.042  INFO 10896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-01-20 15:22:11.045  INFO 10896 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.466 seconds (JVM running for 5.71)
+2021-01-20 15:22:32.399  INFO 10896 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-20 15:22:32.399  INFO 10896 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-20 15:22:32.411  INFO 10896 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2021-01-20 15:22:33.081 ERROR 10896 --- [http-nio-9999-exec-1] c.p.i.controller.CourseController        : Invalid bound statement (not found): com.pzhu.iacaa2_0.mapper.CourseMapper.fuzzyQuery
+2021-01-20 15:24:49.618  INFO 10896 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:24:55.525  INFO 4224 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 4224 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-01-20 15:24:55.530  INFO 4224 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-01-20 15:24:56.406  WARN 4224 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:24:56.426  WARN 4224 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-01-20 15:24:56.709  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$4127037a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.842  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.846  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$374c2a6b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.848  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.853  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.878  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:56.886  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.721  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.726  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.905  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.907  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.908  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.930  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:57.949  INFO 4224 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-20 15:24:58.158  INFO 4224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-01-20 15:24:58.167  INFO 4224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-20 15:24:58.168  INFO 4224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-01-20 15:24:58.316  INFO 4224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-20 15:24:58.316  INFO 4224 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2694 ms
+2021-01-20 15:24:58.868  INFO 4224 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-20 15:24:59.164  INFO 4224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-01-20 15:24:59.169  INFO 4224 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 4.393 seconds (JVM running for 5.636)
+2021-01-20 15:25:09.064  INFO 4224 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-20 15:25:09.064  INFO 4224 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-20 15:25:09.074  INFO 4224 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2021-01-20 15:25:09.227  INFO 4224 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-01-20 15:25:09.369  INFO 4224 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

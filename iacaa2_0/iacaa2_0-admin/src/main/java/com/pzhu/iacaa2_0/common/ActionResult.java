@@ -48,6 +48,7 @@ public class ActionResult<T> implements Serializable {
         ActionResult result = new ActionResult();
         result.succ = true;
         result.setData(data);
+        result.setCode(200);
         return result;
     }
 
