@@ -28,7 +28,7 @@ public class ShiroCofig {
          *   role：该资源必须得到角色权限可以访问
          */
         Map<String,String> filterMap = new LinkedHashMap<>();
-        filterMap.put("/**","jwt");
+//        filterMap.put("/**","jwt");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;
