@@ -70,7 +70,7 @@ export default {
             _this.$store.commit("SET_TOKEN",token)
             _this.$store.commit("SET_USERNAME",userName)
 
-            _this.$router.push("/Main")
+            _this.$router.push("/Layout")
           })
         } else {
           console.log('error submit!!');

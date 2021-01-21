@@ -20,9 +20,9 @@ public class TokenService {
     @Autowired
     IUserService userService;
     /**
-     * 过期时间5分钟
+     * 过期时间30分钟
      */
-    private static final long EXPIRE_TIME = 5 * 60 * 1000;
+    private static final long EXPIRE_TIME = 30 * 60 * 1000;
 
     private static final String EXPIRE = "sjhdf%*&#%^Dhdsg82645sfk";
 

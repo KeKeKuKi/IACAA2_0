@@ -42,7 +42,7 @@ public class UserController {
     @ResponseBody
     @RequestMapping("/login")
     @PassToken
-    public ActionResult list(User user) throws IOException {
+    public ActionResult list(@RequestBody User user) throws IOException {
         Subject subject = SecurityUtils.getSubject();
         JSONObject jsonObject = new JSONObject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
