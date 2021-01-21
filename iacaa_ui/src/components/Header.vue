@@ -1,6 +1,6 @@
 <template>
   <div class="head-mess">
-    欢迎访问IACAA2.0
+    WELCOME IACAA2.0
   </div>
 </template>
 

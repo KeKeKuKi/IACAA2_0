@@ -1,5 +1,19 @@
 <template>
   <span>
+    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+      <el-form-item label="审批人">
+    <el-input v-model="formInline.user" placeholder="审批人"></el-input>
+    </el-form-item>
+    <el-form-item label="活动区域">
+    <el-select v-model="formInline.region" placeholder="活动区域">
+      <el-option label="区域一" value="shanghai"></el-option>
+      <el-option label="区域二" value="beijing"></el-option>
+    </el-select>
+    </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">查询</el-button>
+      </el-form-item>
+    </el-form>
     <el-table
       :data="tableData"
       style="width: 100%"
@@ -7,19 +21,27 @@
       <el-table-column
         fixed
         prop="id"
-        label="ID">
+        label="ID"
+        width="100">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="名称">
+        label="名称"
+        width="400">
       </el-table-column>
       <el-table-column
         prop="editUser.name"
-        label="管理教師">
+        label="管理教師"
+        width="300">
       </el-table-column>
       <el-table-column
         prop="province"
         label="操作">
+          <el-button icon="el-icon-search" circle></el-button>
+          <el-button type="primary" icon="el-icon-edit" circle></el-button>
+          <el-button type="success" icon="el-icon-check" circle></el-button>
+          <el-button type="primary" icon="el-icon-search">搜索</el-button>
+          <el-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
       </el-table-column>
     </el-table>
     <el-pagination
