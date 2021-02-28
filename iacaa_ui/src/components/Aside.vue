@@ -15,13 +15,16 @@
         </template>
         <el-submenu index="1-1">
           <template slot="title">毕业要求</template>
-          <el-menu-item index="1-1-1">年度管理</el-menu-item>
-          <el-menu-item index="1-1-2">历史数据</el-menu-item>
+          <el-menu-item index="1-1-1">
+            <router-link to="GradRequirementEdit">年度管理</router-link>
+          </el-menu-item>
+
         </el-submenu>
         <el-submenu index="1-2">
           <template slot="title">指标点</template>
-          <el-menu-item index="1-2-1">年度管理</el-menu-item>
-          <el-menu-item index="1-2-2">历史数据</el-menu-item>
+            <el-menu-item index="1-2-1">
+              <router-link to="Targrt">年度管理</router-link>
+            </el-menu-item>
         </el-submenu>
       </el-submenu>
 

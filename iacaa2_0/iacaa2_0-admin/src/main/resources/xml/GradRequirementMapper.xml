@@ -16,8 +16,30 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,
-        name, discrible, year, sys_grade, stu_grade, created_date, update_date
+        id, name, discrible, year, sys_grade, stu_grade, created_date, update_date
     </sql>
+
+
+    <select id="getByEntity" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_grad_requirement
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="name != null and name !=''">
+                    AND name = #{name}
+                </if>
+                <if test="discrible != null and discrible !=''">
+                    AND discrible = #{discrible}
+                </if>
+                <if test="year != null">
+                    AND year = #{year}
+                </if>
+                <if test="discrible != null and discrible !=''">
+                    AND discrible = #{discrible}
+                </if>
+            </trim>
+        </where>
+    </select>
 
 </mapper>

@@ -6,6 +6,8 @@ import com.pzhu.iacaa2_0.service.IGradRequirementService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GradRequirementServiceImpl extends ServiceImpl<GradRequirementMapper, GradRequirement> implements IGradRequirementService {
 
+    @Override
+    public List<GradRequirement> list(GradRequirement gradRequirement) {
+        return baseMapper.getByEntity(gradRequirement);
+    }
 }

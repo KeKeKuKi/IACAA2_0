@@ -30,7 +30,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     @Override
     public List<CourseVo> voList(Course course) {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
-        List<Course> courses = baseMapper.selectList(null);
+        List<Course> courses = baseMapper.selectList(queryWrapper);
         List<CourseVo> coursesVos = new ArrayList<>();
         courses.forEach(i -> {
             CourseVo courseVo = new CourseVo();

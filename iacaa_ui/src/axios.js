@@ -4,6 +4,8 @@ import ElementUI from 'element-ui'
 axios.defaults.baseURL = "http://localhost:9999"
 
 axios.interceptors.request.use(config => {
+  const token = localStorage.getItem("token")
+  config.headers.token = token
   return config
 })
 

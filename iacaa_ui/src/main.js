@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 
 import "./axios"
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
 
 Vue.use(ElementUI);
 

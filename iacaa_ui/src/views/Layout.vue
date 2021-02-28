@@ -9,7 +9,8 @@
         </el-aside>
         <el-container>
           <el-main>
-            <Main></Main>
+<!--            <GradRequirementEdit></GradRequirementEdit>-->
+            <router-view></router-view>
           </el-main>
           <el-footer style="height: 40px">
             <Footer></Footer>
@@ -24,11 +25,11 @@ import Header from "../components/Header";
 import Aside from "../components/Aside";
 import Footer from "../components/Footer";
 import Main from "../components/Main";
-
+import GradRequirementEdit from "../views/gradRequirement/GradRequirementEdit";
 export default {
-  name: "Layout.vue",
-  components: {Footer,Aside,Header,Main},
-  comments:{Footer,Aside,Header,Main},
+  name: "Layout",
+  components: {Footer,Aside,Header,Main,GradRequirementEdit},
+  comments:{Footer,Aside,Header,Main,GradRequirementEdit},
 
 }
 </script>

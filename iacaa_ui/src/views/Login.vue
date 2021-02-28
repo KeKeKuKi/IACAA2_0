@@ -7,7 +7,7 @@
     <el-main>
       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
         <el-form-item label="账户" prop="name">
-          <el-input type="password" v-model="ruleForm.name" autocomplete="off"></el-input>
+          <el-input type="text" v-model="ruleForm.name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pass">
           <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>

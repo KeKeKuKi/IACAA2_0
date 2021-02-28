@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
@@ -23,7 +23,7 @@ public class UserRole extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "uid", type = IdType.AUTO)
+//    @TableId(value = "uid", type = IdType.AUTO)
     private Long uid;
 
     @TableField("rid")

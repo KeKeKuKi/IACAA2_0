@@ -9,7 +9,7 @@ public class BaseEntity {
      * 唯一标识
      */
     //去除Myatisplus生成id
-//    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id",type = IdType.AUTO)
     private long id;
 //
 //    private int updateId;
