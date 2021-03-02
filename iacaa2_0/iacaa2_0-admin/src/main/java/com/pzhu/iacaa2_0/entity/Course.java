@@ -42,15 +42,4 @@ public class Course extends BaseEntity {
     @TableField("edit_user_id")
     private Integer editUserId;
 
-    /**
-     * 创建时间
-     */
-    @TableField("created_date")
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    @TableField("update_date")
-    private LocalDateTime updateDate;
 }

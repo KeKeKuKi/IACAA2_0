@@ -1,6 +1,6 @@
 <template>
   <div class="head-mess">
-    WELCOME IACAA2.0
+    学生达成度评价及分析系统2.0
   </div>
 </template>
 

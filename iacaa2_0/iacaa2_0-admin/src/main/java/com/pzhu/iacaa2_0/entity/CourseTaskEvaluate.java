@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
@@ -48,17 +48,6 @@ public class CourseTaskEvaluate extends BaseEntity {
     @TableField("year")
     private LocalDateTime year;
 
-    /**
-     * 创建时间
-     */
-    @TableField("created_date")
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    @TableField("update_date")
-    private LocalDateTime updateDate;
 
 
 }

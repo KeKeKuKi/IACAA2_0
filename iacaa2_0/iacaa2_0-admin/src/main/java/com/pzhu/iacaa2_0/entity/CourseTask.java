@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
@@ -67,17 +67,6 @@ public class CourseTask extends BaseEntity {
     @TableField("stu_grade")
     private Double stuGrade;
 
-    /**
-     * 创建时间
-     */
-    @TableField("created_date")
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    @TableField("update_date")
-    private LocalDateTime updateDate;
 
 
 }

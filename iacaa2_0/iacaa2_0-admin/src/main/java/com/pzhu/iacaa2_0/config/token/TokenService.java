@@ -43,6 +43,7 @@ public class TokenService {
             jwtVerifier.verify(token);
         } catch (JWTVerificationException e) {
             throw new RuntimeException("token已过期！");
+//            return false;
         }
         return false;
     }

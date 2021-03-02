@@ -44,7 +44,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             logger.warn(String.format("%S尝试非法访问资源",httpServletRequest.getLocalAddr()));
             throw new RuntimeException("无token！");
         }
-        tokenService.checkToken(token);
+        try{
+            tokenService.checkToken(token);
+        }catch (RuntimeException e){
+            return false;
+        }
         return true;
     }
 

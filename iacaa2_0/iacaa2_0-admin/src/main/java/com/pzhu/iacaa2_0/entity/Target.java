@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
@@ -37,11 +37,14 @@ public class Target extends BaseEntity {
     @TableField("req_id")
     private Integer reqId;
 
+    @TableField(exist = false)
+    private GradRequirement gradRequirement;
+
     /**
      * 年份
      */
     @TableField("year")
-    private LocalDate year;
+    private Integer year;
 
     /**
      * 系统计算成绩
@@ -55,17 +58,6 @@ public class Target extends BaseEntity {
     @TableField("stu_grade")
     private Double stuGrade;
 
-    /**
-     * 创建时间
-     */
-    @TableField("created_date")
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    @TableField("update_date")
-    private LocalDateTime updateDate;
 
 
 }

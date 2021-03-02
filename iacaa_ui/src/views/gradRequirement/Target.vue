@@ -2,7 +2,7 @@
 <span>
     <el-form :inline="true" :model="serchForm" class="demo-form-inline">
       <el-form-item label="">
-        <el-input v-model="serchForm.word" placeholder="名称/描述" clearable></el-input>
+        <el-input v-model="serchForm.word" placeholder="描述" clearable></el-input>
       </el-form-item>
       <el-form-item label="">
         <el-select v-model="serchForm.year" placeholder="年份" clearable>
@@ -40,6 +40,7 @@
       </el-table-column>
       <el-table-column
         type="index"
+        label="序号"
         width="50">
       </el-table-column>
       <el-table-column
@@ -48,12 +49,12 @@
         width="80">
       </el-table-column>
       <el-table-column
-        prop="name"
-        label="名称"
-        width="200">
+        prop="reqName"
+        label="支撑毕业要求"
+        width="120">
       </el-table-column>
       <el-table-column
-        prop="discrible"
+        prop="discribe"
         label="描述"
         width="900">
       </el-table-column>
@@ -83,7 +84,7 @@
             <el-input type="text" v-model="editForm.name" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="描述" prop="pass">
-            <el-input type="text" v-model="editForm.discrible" autocomplete="off"></el-input>
+            <el-input type="text" v-model="editForm.discribe" autocomplete="off"></el-input>
           </el-form-item>
         </el-form>
       </div>
@@ -125,7 +126,7 @@
 
 <script>
 export default {
-  name: "GradRequirementEdit",
+  name: "Target",
   mounted() {
     this.getList()
   },
@@ -144,11 +145,11 @@ export default {
       },
       editForm: {
         id: '',
-        discrible: '',
+        discribe: '',
         name: ''
       },
       addForm: {
-        discrible: '',
+        discribe: '',
         name: ''
       },
       ids: []
@@ -165,7 +166,7 @@ export default {
     getList() {
       const token = localStorage.getItem("token")
       this.loading = true
-      this.$axios.post('gradRequirement/list',{
+      this.$axios.post('target/list',{
         pageNum: this.currentPage,
         pageSize: this.pageSize,
         word: this.serchForm.word,
@@ -200,7 +201,7 @@ export default {
     submitEditForm(){
       this.dialogVisible = false
       this.loading = true
-      this.$axios.post('gradRequirement/update',this.editForm,{}).then(res => {
+      this.$axios.post('target/update',this.editForm,{}).then(res => {
         if (res.data.succ) {
           this.$message({
             message: '修改成功',
@@ -216,7 +217,7 @@ export default {
     submitAddForm(){
       this.dialogVisible1 = false
       this.loading = true
-      this.$axios.post('gradRequirement/save',this.addForm,{}).then(res => {
+      this.$axios.post('target/save',this.addForm,{}).then(res => {
         if (res.data.succ) {
           this.$message({
             message: '添加成功',
@@ -242,8 +243,8 @@ export default {
     },
     handleDelete(){
       this.loading = true
-      this.$axios.post('gradRequirement/del',{
-        ids : this.ids}
+      this.$axios.post('target/del',{
+          ids : this.ids}
         ,{}).then(res => {
         if (res.data.succ) {
           this.$message({
@@ -284,6 +285,6 @@ export default {
 .dialog-footer{
   margin-top: 30px;
 }.demo-form-inline{
-  margin-left: 50px;
+   margin-left: 50px;
  }
 </style>

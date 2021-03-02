@@ -10,18 +10,21 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
  * @since 2021-01-15
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode()
 @TableName("user")
-public class User extends BaseEntity {
+public class User{
 
     private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id",type = IdType.AUTO)
+    private long id;
 
     @TableField("name")
     private String name;

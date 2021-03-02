@@ -10,18 +10,20 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ZhaoZezhong
  * @since 2021-01-15
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode()
 @TableName("t_sys_config")
-public class SysConfig extends BaseEntity {
-
+public class SysConfig {
     private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id",type = IdType.AUTO)
+    private long id;
 
     /**
      * 配置名

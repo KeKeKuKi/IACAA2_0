@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Layout from '@/views/Layout'
 import Login from '@/views/Login'
 import GradRequirementEdit from '@/views/gradRequirement/GradRequirementEdit'
-import Targrt from '@/views/gradRequirement/Targrt'
+import Target from '@/views/gradRequirement/Target'
 
 Vue.use(Router)
 
@@ -29,9 +29,9 @@ export default new Router({
           component: GradRequirementEdit
         },
         {
-          path: 'Targrt',
-          name: 'Targrt',
-          component: Targrt
+          path: 'Target',
+          name: 'Target',
+          component: Target
         }
       ]
     },

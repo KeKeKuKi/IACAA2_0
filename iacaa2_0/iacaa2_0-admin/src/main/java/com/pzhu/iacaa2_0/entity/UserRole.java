@@ -17,13 +17,13 @@ import lombok.EqualsAndHashCode;
  * @since 2021-01-15
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode()
 @TableName("user_role")
-public class UserRole extends BaseEntity {
+public class UserRole{
 
     private static final long serialVersionUID = 1L;
 
-//    @TableId(value = "uid", type = IdType.AUTO)
+    @TableId(value = "uid", type = IdType.AUTO)
     private Long uid;
 
     @TableField("rid")
