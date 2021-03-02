@@ -9,11 +9,14 @@ import com.pzhu.iacaa2_0.base.PageBaseController;
 import com.pzhu.iacaa2_0.common.ActionResult;
 import com.pzhu.iacaa2_0.entity.Course;
 import com.pzhu.iacaa2_0.entity.GradRequirement;
+import com.pzhu.iacaa2_0.entity.Target;
 import com.pzhu.iacaa2_0.entityVo.GradRequirementVo;
 import com.pzhu.iacaa2_0.entityVo.IdsVo;
 import com.pzhu.iacaa2_0.entityVo.PageVo;
 import com.pzhu.iacaa2_0.service.IGradRequirementService;
+import com.pzhu.iacaa2_0.service.ITargetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +45,8 @@ public class GradRequirementController extends PageBaseController {
 
     @Autowired
     IGradRequirementService gradRequirementService;
+    @Autowired
+    ITargetService targetService;
 
     @RequestMapping("/list")
     public ActionResult list(@RequestBody GradRequirementVo vo){
@@ -59,12 +64,24 @@ public class GradRequirementController extends PageBaseController {
         return ActionResult.ofSuccess(page);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @RequestMapping("/update")
-    public ActionResult update(@RequestBody GradRequirement gradRequirement){
-        gradRequirement.setUpdateDate(LocalDateTime.now());
+    public ActionResult update(@RequestBody GradRequirementVo vo){
+        List<Target> targets = vo.getTargets();
+        UpdateWrapper<Target> targetUpdateWrapper = new UpdateWrapper<>();
+        targetUpdateWrapper.eq("req_id",vo.getId());
+        targetUpdateWrapper.eq("year",LocalDate.now().getYear());
+        targetService.remove(targetUpdateWrapper);
+        targets.forEach(i ->{
+            i.setYear(LocalDate.now().getYear());
+            i.setCreatedDate(LocalDateTime.now());
+            i.setUpdateDate(LocalDateTime.now());
+            targetService.save(i);
+        });
+        vo.setUpdateDate(LocalDateTime.now());
         UpdateWrapper<GradRequirement> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("id",gradRequirement.getId());
-        boolean update = gradRequirementService.update(gradRequirement, updateWrapper);
+        updateWrapper.eq("id",vo.getId());
+        boolean update = gradRequirementService.update(vo, updateWrapper);
         return update ? ActionResult.ofSuccess() : ActionResult.ofFail(200,"更新失败");
     }
 

@@ -38,7 +38,7 @@ public class TargetController {
     @Autowired
     ITargetService targetService;
 
-    @RequestMapping("/list")
+    @RequestMapping("/pageList")
     public ActionResult list(@RequestBody TargetVo vo){
         QueryWrapper<Target> wrapper = new QueryWrapper<>();
         if(!StringUtils.isEmpty(vo.getWord())){
@@ -47,10 +47,29 @@ public class TargetController {
         if(!StringUtils.isEmpty(vo.getYear())){
             wrapper.eq("year",vo.getYear());
         }
+        if(!StringUtils.isEmpty(vo.getReqId())){
+            wrapper.eq("req_id",vo.getReqId());
+        }
         PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
         List<Target> list = targetService.list(wrapper);
         PageInfo page = new PageInfo(list);
         return ActionResult.ofSuccess(page);
+    }
+
+    @RequestMapping("/list")
+    public ActionResult pageList(@RequestBody TargetVo vo){
+        QueryWrapper<Target> wrapper = new QueryWrapper<>();
+        if(!StringUtils.isEmpty(vo.getWord())){
+            wrapper.like("discribe",vo.getWord());
+        }
+        if(!StringUtils.isEmpty(vo.getYear())){
+            wrapper.eq("year",vo.getYear());
+        }
+        if(!StringUtils.isEmpty(vo.getReqId())){
+            wrapper.eq("req_id",vo.getReqId());
+        }
+        List<Target> list = targetService.list(wrapper);
+        return ActionResult.ofSuccess(list);
     }
 
     @RequestMapping("/update")

@@ -1,6 +1,6 @@
 <template>
 <span>
-    <el-form :inline="true" :model="serchForm" class="demo-form-inline">
+    <el-form :inline="true" :model="serchForm" class="demo-form-inline" style="height: 50px">
       <el-form-item label="">
         <el-input v-model="serchForm.word" placeholder="名称/描述" clearable></el-input>
       </el-form-item>
@@ -19,7 +19,13 @@
       </el-form-item>
       <span style="float: right;margin-right: 30px">
         <el-form-item>
-          <el-button type="success" @click="handleAddForm()">新增</el-button>
+          <el-button type="success" @click="">下载导入模板</el-button>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="success" @click="">导入年度配置</el-button>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="warning" @click="handleAddForm()">新增</el-button>
         </el-form-item>
         <el-form-item>
           <el-button type="danger" @click="handleDelete()">删除</el-button>
@@ -74,16 +80,24 @@
       </el-table-column>
     </el-table>
     <el-dialog
-      title="编辑"
+      title="毕业要求编辑"
       :visible.sync="dialogVisible"
       width="30%">
       <div>
-        <el-form :model="editForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form :model="editForm" status-icon ref="ruleForm" class="demo-ruleForm">
           <el-form-item label="名称" prop="name">
             <el-input type="text" v-model="editForm.name" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="描述" prop="pass">
             <el-input type="text" v-model="editForm.discrible" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="指标点：" prop="pass">
+            <el-button type="primary" round style="" @click="handleAddTarget">添加</el-button>
+            <br>
+            <span v-for="(item,index) in editForm.targets" type="text" autocomplete="off">
+              <el-input type="text" autocomplete="off" v-model="item.discribe" style="width: 91%;margin-top: 10px"></el-input>
+              <el-button type="danger" icon="el-icon-delete" circle @click="deleteDiscribe(index)"></el-button>
+            </span>
           </el-form-item>
         </el-form>
       </div>
@@ -93,11 +107,11 @@
       </div>
     </el-dialog>
     <el-dialog
-      title="添加"
+      title="添加年度毕业要求"
       :visible.sync="dialogVisible1"
       width="30%">
       <div>
-        <el-form :model="addForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form :model="addForm" status-icon ref="ruleForm" class="demo-ruleForm">
           <el-form-item label="名称" prop="name">
             <el-input type="text" v-model="addForm.name" autocomplete="off"></el-input>
           </el-form-item>
@@ -145,7 +159,8 @@ export default {
       editForm: {
         id: '',
         discrible: '',
-        name: ''
+        name: '',
+        targets: [],
       },
       addForm: {
         discrible: '',
@@ -234,6 +249,16 @@ export default {
       this.editForm.id = record.id
       this.editForm.discrible = record.discrible
       this.editForm.name = record.name
+      this.$axios.post('target/list',{
+          reqId : record.id}
+        ,{}).then(res => {
+        if (res.data.succ) {
+          this.editForm.targets = res.data.data
+        }
+        this.loading = false
+      }).catch(() => {
+        this.loading = false
+      })
     },
     handleAddForm(){
       this.dialogVisible1 = true
@@ -256,6 +281,12 @@ export default {
       }).catch(() => {
         this.loading = false
       })
+    },
+    handleAddTarget(){
+      this.editForm.targets.push({discribe: '',reqId: this.editForm.id})
+    },
+    deleteDiscribe(index){
+      this.editForm.targets.splice(index,1)
     }
   }
 }
@@ -279,11 +310,14 @@ export default {
 }
 .el-form{
   text-align: left;
-  height: 40px;
 }
 .dialog-footer{
-  margin-top: 30px;
-}.demo-form-inline{
+  margin-top: 0px;
+}
+.demo-form-inline{
   margin-left: 50px;
- }
+}
+.el-main .el-divider--horizontal{
+  margin: 0px 0;
+}
 </style>
