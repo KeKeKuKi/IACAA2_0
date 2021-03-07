@@ -14,10 +14,13 @@
           <span>毕业达成体系</span>
         </template>
         <el-menu-item index="1-1">
-          <router-link to="GradRequirementEdit" style="color: white;text-decoration:none">毕业要求</router-link>
+          <router-link to="GradRequirementEdit" style="color: white;text-decoration:none">毕业要求体系</router-link>
+        </el-menu-item>
+        <el-menu-item index="1-1">
+          <router-link to="Target" style="color: white;text-decoration:none">指标点体系</router-link>
         </el-menu-item>
         <el-menu-item index="1-2">
-          <router-link to="Target" style="color: white;text-decoration:none">指标点</router-link>
+          <router-link to="Course" style="color: white;text-decoration:none">课程目标体系</router-link>
         </el-menu-item>
       </el-submenu>
 

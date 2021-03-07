@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
@@ -55,6 +57,7 @@ public class GradRequirement extends BaseEntity {
     @TableField("stu_grade")
     private Double stuGrade;
 
-
+    @TableField(exist = false)
+    private List<Target> targets;
 
 }

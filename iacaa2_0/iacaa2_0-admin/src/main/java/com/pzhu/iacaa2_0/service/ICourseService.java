@@ -24,6 +24,6 @@ public interface ICourseService extends IService<Course> {
      * @Return: List<CourseVo>
      * @Create: 2021/1/20 11:09
      */
-    List<CourseVo> voList(Course course);
+    List<CourseVo> voList(CourseVo vo);
 
 }

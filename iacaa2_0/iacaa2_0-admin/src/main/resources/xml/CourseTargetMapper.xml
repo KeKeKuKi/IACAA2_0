@@ -14,8 +14,30 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,
-        course_id, target_id, mix, created_date, update_date
+        id, course_id, target_id, mix
     </sql>
+
+    <resultMap type="com.pzhu.iacaa2_0.entityVo.CourseTargetVo" id="voMap">
+        <association property="target" column="target_id" select="com.pzhu.iacaa2_0.mapper.TargetMapper.selectById"></association>
+        <association property="course" column="course_id" select="com.pzhu.iacaa2_0.mapper.CourseMapper.selectById"></association>
+    </resultMap>
+
+
+    <select id="volist" resultMap="voMap" parameterType="com.pzhu.iacaa2_0.entity.CourseTarget">
+        select <include refid="Base_Column_List"></include> from t_course_target
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="id != null and id !=''">
+                    AND id = #{id}
+                </if>
+                <if test="courseId != null and courseId !=''">
+                    AND course_id = #{courseId}
+                </if>
+                <if test="targetId != null and targetId !=''">
+                    AND target_id = #{targetId}
+                </if>
+            </trim>
+        </where>
+    </select>
 
 </mapper>

@@ -12,26 +12,48 @@
         <result column="update_date" property="updateDate" />
     </resultMap>
 
+    <resultMap id="voMap" type="com.pzhu.iacaa2_0.entityVo.CourseVo">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="image" property="image" />
+        <result column="edit_user_id" property="editUserId" />
+        <result column="created_date" property="createdDate" />
+        <result column="update_date" property="updateDate" />
+        <association property="courseTasks" column="id" select="com.pzhu.iacaa2_0.mapper.CourseTaskMapper.getByCourseId"></association>
+    </resultMap>
+
+
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,name, image, edit_user_id, created_date, update_date
+        id, name, image, edit_user_id, created_date, update_date
     </sql>
+
+    <select id="voList" resultMap="voMap" parameterType="com.pzhu.iacaa2_0.entity.Course">
+        select <include refid="Base_Column_List"></include>
+        from t_course a
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="word != null and word !=''">
+                    AND (a.name like CONCAT(CONCAT('%',#{word}),'%'))
+                </if>
+            </trim>
+        </where>
+        ORDER BY a.name
+    </select>
 
     <select id="fuzzyQuery" parameterType="com.pzhu.iacaa2_0.entity.Course" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from t_course
+        from t_course a
         <where>
             <trim prefixOverrides="AND">
                 <if test="word != null and word !=''">
-                    AND name like CONCAT(CONCAT('%',#{word}),'%')
-                </if>
-                <if test="name != null">
-                    AND name = #{name}
+                    AND a.name like CONCAT(CONCAT('%',#{word}),'%')
                 </if>
             </trim>
         </where>
-        ORDER BY when_updated DESC
+        ORDER BY a.name
     </select>
 
 </mapper>

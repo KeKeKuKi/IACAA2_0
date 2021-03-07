@@ -11,11 +11,12 @@ axios.interceptors.request.use(config => {
 
 
 axios.interceptors.response.use(response => {
-  if (!response.data.succ){
-    ElementUI.Message.error(response.data.msg)
-    return Promise.reject(response.data.msg)
-  }else {
+  // if (!response.data.succ){
+  //   ElementUI.Message.error(response.data.msg)
+  //   return Promise.reject(response.data.msg)
+  // }else {
+  //   return response
+  // }
     return response
-  }
 }
 )

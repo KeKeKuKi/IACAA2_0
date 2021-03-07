@@ -5,7 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.pzhu.iacaa2_0.entity.CourseTask">
         <result column="id" property="id" />
-        <result column="describe" property="describe" />
+        <result column="describes" property="describe" />
         <result column="course_id" property="courseId" />
         <result column="target_id" property="targetId" />
         <result column="mix" property="mix" />
@@ -18,8 +18,13 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,
-        describe, course_id, target_id, mix, year, sys_grade, stu_grade, created_date, update_date
+        id, describes, course_id, target_id, mix, year, sys_grade, stu_grade, created_date, update_date
     </sql>
+
+    <select id="getByCourseId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"></include>
+        from t_course_task where course_id = #{id}
+    </select>
+
 
 </mapper>

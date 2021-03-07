@@ -2,7 +2,7 @@
 <span>
     <el-form :inline="true" :model="serchForm" class="demo-form-inline" style="height: 50px">
       <el-form-item label="">
-        <el-input v-model="serchForm.word" placeholder="名称/描述" clearable></el-input>
+        <el-input v-model="serchForm.word" placeholder="标题/描述" clearable></el-input>
       </el-form-item>
       <el-form-item label="">
         <el-select v-model="serchForm.year" placeholder="年份" clearable>
@@ -19,7 +19,7 @@
       </el-form-item>
       <span style="float: right;margin-right: 30px">
         <el-form-item>
-          <el-button type="success" @click="">下载导入模板</el-button>
+          <el-button type="success" @click="exportTemplate">下载导入模板</el-button>
         </el-form-item>
         <el-form-item>
           <el-button type="success" @click="">导入年度配置</el-button>
@@ -37,7 +37,7 @@
       ref="multipleTable"
       :data="tableData"
       style="width: 100%"
-      height="680"
+      height="750"
       tooltip-effect="dark"
       @selection-change="handleSelectionChange">
       <el-table-column
@@ -66,12 +66,12 @@
       <el-table-column
         prop="stuGrade"
         label="学生评价成绩"
-        width="100">
+        width="120">
       </el-table-column>
       <el-table-column
         prop="sysGrade"
         label="系统计算成绩"
-        width="100">
+        width="120">
       </el-table-column>
       <el-table-column label="操作" >
         <template slot-scope="scope">
@@ -85,7 +85,7 @@
       width="30%">
       <div>
         <el-form :model="editForm" status-icon ref="ruleForm" class="demo-ruleForm">
-          <el-form-item label="名称" prop="name">
+          <el-form-item label="标题" prop="name">
             <el-input type="text" v-model="editForm.name" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="描述" prop="pass">
@@ -112,7 +112,7 @@
       width="30%">
       <div>
         <el-form :model="addForm" status-icon ref="ruleForm" class="demo-ruleForm">
-          <el-form-item label="名称" prop="name">
+          <el-form-item label="标题" prop="name">
             <el-input type="text" v-model="addForm.name" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="描述" prop="pass">
@@ -287,6 +287,27 @@ export default {
     },
     deleteDiscribe(index){
       this.editForm.targets.splice(index,1)
+    },
+    exportTemplate(){
+      this.$axios.get('gradRequirement/exportTemplate',  {
+        responseType: 'blob'
+      }).then(res => {
+        let blob = new Blob([res.data], {
+          type: "application/vnd.ms-excel"
+        });
+        let objectUrl = URL.createObjectURL(blob);
+        let a = document.createElement("a");
+        let contentDisposition = res.headers['content-disposition'];
+        console.log(contentDisposition)
+        a.href = objectUrl;
+        a.download = new Date().getFullYear()+"年度毕业要求导入模板";
+        //a.click();
+        //下面这个写法兼容火狐
+        a.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
+        window.URL.revokeObjectURL(blob);
+      }).catch(err => {
+        alert('下载文件出错')
+      });
     }
   }
 }

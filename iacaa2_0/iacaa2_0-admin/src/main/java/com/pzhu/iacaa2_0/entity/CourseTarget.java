@@ -28,13 +28,14 @@ public class CourseTarget extends BaseEntity {
      * 关联课程
      */
     @TableField("course_id")
-    private Integer courseId;
+    private Long courseId;
+
 
     /**
      * 关联指标点
      */
     @TableField("target_id")
-    private Integer targetId;
+    private Long targetId;
 
     /**
      * 关联比例

@@ -1,8 +1,8 @@
 <template>
-<span>
-    <el-form :inline="true" :model="serchForm" class="demo-form-inline">
+<span style="width: 100%">
+    <el-form :inline="true" :model="serchForm" class="demo-form-inline" style="height: 50px">
       <el-form-item label="">
-        <el-input v-model="serchForm.word" placeholder="描述" clearable></el-input>
+        <el-input v-model="serchForm.word" placeholder="标题/描述" clearable></el-input>
       </el-form-item>
       <el-form-item label="">
         <el-select v-model="serchForm.year" placeholder="年份" clearable>
@@ -15,23 +15,15 @@
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="getList()">查询</el-button>
+        <el-button type="primary" @click="getReqList">查询</el-button>
       </el-form-item>
-      <span style="float: right;margin-right: 30px">
-        <el-form-item>
-          <el-button type="success" @click="handleAddForm()">新增</el-button>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="danger" @click="handleDelete()">删除</el-button>
-        </el-form-item>
-      </span>
     </el-form>
     <el-divider></el-divider>
     <el-table
       ref="multipleTable"
       :data="tableData"
       style="width: 100%"
-      height="680"
+      height="750"
       tooltip-effect="dark"
       @selection-change="handleSelectionChange">
       <el-table-column
@@ -41,75 +33,62 @@
       <el-table-column
         type="index"
         label="序号"
-        width="50">
+        width="100">
       </el-table-column>
       <el-table-column
         prop="year"
         label="年份"
-        width="80">
-      </el-table-column>
-      <el-table-column
-        prop="reqName"
-        label="支撑毕业要求"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="discribe"
-        label="描述"
-        width="900">
-      </el-table-column>
-      <el-table-column
-        prop="stuGrade"
-        label="学生评价成绩"
         width="100">
       </el-table-column>
       <el-table-column
-        prop="sysGrade"
-        label="系统计算成绩"
-        width="100">
+        prop="name"
+        label="毕业要求"
+        width="400">
       </el-table-column>
-      <el-table-column label="操作" >
+      <el-table-column prop="targets" type="expand" label="指标点" width="1000">
         <template slot-scope="scope">
-          <el-button type="primary" icon="el-icon-edit" circle @click="handleEditForm(scope.row)"></el-button>
-      </template>
+          <el-table :data="scope.row.targets" stripe>
+            <el-table-column
+              prop="discribe"
+              label="指标点描述">
+            </el-table-column>
+            <el-table-column label="操作" >
+              <template slot-scope="scope1">
+                <el-button type="primary" icon="el-icon-edit" circle @click="handleTargetEditForm(scope1.row,scope.row.name)"></el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+        </template>
       </el-table-column>
     </el-table>
     <el-dialog
-      title="编辑"
+      title="指标点支撑编辑"
       :visible.sync="dialogVisible"
       width="30%">
       <div>
-        <el-form :model="editForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="名称" prop="name">
-            <el-input type="text" v-model="editForm.name" autocomplete="off"></el-input>
+        <el-form :model="targetEditForm" status-icon ref="ruleForm" class="demo-ruleForm">
+          <el-form-item label="毕业要求" prop="name">
+            <el-input type="text" v-model="targetEditForm.reqName" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="描述" prop="pass">
-            <el-input type="text" v-model="editForm.discribe" autocomplete="off"></el-input>
+          <el-form-item label="指标点" prop="pass">
+            <el-input type="text" v-model="targetEditForm.target" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="支撑课程：" prop="pass">
+              <el-button type="primary" round style="" @click="handleAddTarget">添加</el-button>
+              <br>
+              <span v-for="(item,index) in targetEditForm.courseTargets" type="text" autocomplete="off">
+                <el-select v-model="item.course.id" placeholder="选择课程" clearable filterable style="width: 60%;margin-top: 10px">
+                  <el-option v-for="(item1,index1) in courses" :key="index1" :label="item1.name" :value="item1.id"></el-option>
+                </el-select>
+                <el-input type="text" autocomplete="off" v-model="item.mix" style="width: 30%;margin-top: 10px"></el-input>
+                <el-button type="danger" icon="el-icon-delete" circle @click="deleteDiscribe(index)"></el-button>
+              </span>
           </el-form-item>
         </el-form>
       </div>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="submitEditForm('editForm')">确 定</el-button>
-      </div>
-    </el-dialog>
-    <el-dialog
-      title="添加"
-      :visible.sync="dialogVisible1"
-      width="30%">
-      <div>
-        <el-form :model="addForm" status-icon ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="名称" prop="name">
-            <el-input type="text" v-model="addForm.name" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="描述" prop="pass">
-            <el-input type="text" v-model="addForm.discrible" autocomplete="off"></el-input>
-          </el-form-item>
-        </el-form>
-      </div>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible1 = false">取 消</el-button>
-        <el-button type="primary" @click="submitAddForm()">确 定</el-button>
+        <el-button type="primary" @click="submitTargetEditForm()">确 定</el-button>
       </div>
     </el-dialog>
     <el-pagination
@@ -126,9 +105,10 @@
 
 <script>
 export default {
-  name: "Target",
+  name: "GradRequirementEdit",
   mounted() {
-    this.getList()
+    this.getReqList()
+    this.getCourseList()
   },
   data() {
     return {
@@ -145,14 +125,24 @@ export default {
       },
       editForm: {
         id: '',
-        discribe: '',
-        name: ''
+        discrible: '',
+        name: '',
+        targets: [],
       },
       addForm: {
-        discribe: '',
+        discrible: '',
         name: ''
       },
-      ids: []
+      courses: [],
+      ids: [],
+      targetEditForm:{
+        id:'',
+        reqName:'',
+        target:'',
+        courseTargets: [],
+      }
+
+
     }
   },
   methods:{
@@ -163,18 +153,23 @@ export default {
     onSubmit() {
       console.log('submit!');
     },
-    getList() {
-      const token = localStorage.getItem("token")
-      this.loading = true
-      this.$axios.post('target/list',{
+    getCourseList(){
+      this.$axios.post('course/list',{
+      },{
+      }).then(res => {
+        if (res.data.succ) {
+          this.courses = res.data.data
+        }
+      }).catch(() => {
+      })
+    },
+    getReqList() {
+      this.$axios.post('gradRequirement/voList',{
         pageNum: this.currentPage,
         pageSize: this.pageSize,
         word: this.serchForm.word,
         year: this.serchForm.year
       },{
-        headers: {
-          token:token
-        }
       }).then(res => {
         if (res.data.succ) {
           this.tableData = res.data.data.list
@@ -182,9 +177,7 @@ export default {
           this.pageSize = res.data.data.pageSize
           this.currentPage = res.data.data.pageNum
         }
-        this.loading = false
       }).catch(() => {
-        this.loading = false
       })
     },
     handleSizeChange(val) {
@@ -198,63 +191,49 @@ export default {
     },
     handleClose(done) {
     },
-    submitEditForm(){
-      this.dialogVisible = false
-      this.loading = true
-      this.$axios.post('target/update',this.editForm,{}).then(res => {
-        if (res.data.succ) {
-          this.$message({
-            message: '修改成功',
-            type: 'success'
-          });
-          this.getList()
-        }
-        this.loading = false
-      }).catch(() => {
-        this.loading = false
-      })
-    },
-    submitAddForm(){
-      this.dialogVisible1 = false
-      this.loading = true
-      this.$axios.post('target/save',this.addForm,{}).then(res => {
-        if (res.data.succ) {
-          this.$message({
-            message: '添加成功',
-            type: 'success'
-          });
-          this.getList()
-        }
-        this.loading = false
-      }).catch(() => {
-        this.loading = false
-      })
-    },
-    handleEditForm(record){
+    handleTargetEditForm(record,req){
       this.dialogVisible = true
       this.editForm.id = record.id
       this.editForm.discrible = record.discrible
       this.editForm.name = record.name
+      this.$axios.post('courseTarget/voList',{
+          targetId : record.id}
+        ,{}).then(res => {
+        if (res.data.succ) {
+          this.targetEditForm.id = record.id
+          this.targetEditForm.reqName = req
+          this.targetEditForm.target = record.discribe
+          this.targetEditForm.courseTargets = res.data.data
+        }
+        this.loading = false
+      }).catch(() => {
+        this.loading = false
+      })
     },
     handleAddForm(){
       this.dialogVisible1 = true
       this.addForm.discrible = ''
       this.addForm.name = ''
     },
-    handleDelete(){
+    handleAddTarget(targetId){
+      this.targetEditForm.courseTargets.push({course:{id: ''},target:{id: this.targetEditForm.id},mix: ''})
+    },
+    deleteDiscribe(index){
+      this.targetEditForm.courseTargets.splice(index,1)
+    },
+    submitTargetEditForm(){
       this.loading = true
-      this.$axios.post('target/del',{
-          ids : this.ids}
-        ,{}).then(res => {
+      this.$axios.post('courseTarget/saveOrUpdate',this.targetEditForm.courseTargets,{}).then(res => {
         if (res.data.succ) {
+          this.getReqList()
+          this.dialogVisible = false;
           this.$message({
-            message: '删除成功',
+            message: '修改成功',
             type: 'success'
           });
-          this.getList()
         }
         this.loading = false
-      }).catch(() => {
+      }).catch((e) => {
         this.loading = false
       })
     }
@@ -280,11 +259,14 @@ export default {
 }
 .el-form{
   text-align: left;
-  height: 40px;
 }
 .dialog-footer{
-  margin-top: 30px;
-}.demo-form-inline{
-   margin-left: 50px;
- }
+  margin-top: 0px;
+}
+.demo-form-inline{
+  margin-left: 50px;
+}
+.el-main .el-divider--horizontal{
+  margin: 0px 0;
+}
 </style>

@@ -4,6 +4,7 @@ import Layout from '@/views/Layout'
 import Login from '@/views/Login'
 import GradRequirementEdit from '@/views/gradRequirement/GradRequirementEdit'
 import Target from '@/views/gradRequirement/Target'
+import Course from '@/views/gradRequirement/Course'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
           path: 'Target',
           name: 'Target',
           component: Target
+        },
+        {
+          path: 'Course',
+          name: 'Course',
+          component: Course
         }
       ]
     },

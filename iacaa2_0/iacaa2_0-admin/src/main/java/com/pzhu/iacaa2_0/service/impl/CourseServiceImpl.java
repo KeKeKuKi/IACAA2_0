@@ -28,20 +28,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     IUserService userService;
 
     @Override
-    public List<CourseVo> voList(Course course) {
-        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
-        List<Course> courses = baseMapper.selectList(queryWrapper);
-        List<CourseVo> coursesVos = new ArrayList<>();
-        courses.forEach(i -> {
-            CourseVo courseVo = new CourseVo();
-            courseVo.setName(i.getName());
-            courseVo.setImage(i.getImage());
-            courseVo.setId(i.getId());
-            if(i.getEditUserId() != null){
-                courseVo.setEditUser(userService.getById(i.getEditUserId()));
-            }
-            coursesVos.add(courseVo);
-        });
-        return coursesVos;
+    public List<CourseVo> voList(CourseVo vo) {
+        return baseMapper.voList(vo);
     }
 }
