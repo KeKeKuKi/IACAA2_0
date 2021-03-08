@@ -34,8 +34,8 @@ public class CourseTargetController {
     @Autowired
     ICourseTargetService courseTargetService;
 
-    @RequestMapping("/voList")
-    public ActionResult voList(@RequestBody CourseTarget courseTarget){
+    @RequestMapping("/list")
+    public ActionResult list(@RequestBody CourseTarget courseTarget){
         QueryWrapper<CourseTarget> wrapper = new QueryWrapper<>();
         if(!StringUtils.isEmpty(courseTarget.getTargetId())){
             wrapper.like("target_id",courseTarget.getTargetId());
@@ -43,8 +43,13 @@ public class CourseTargetController {
         if(!StringUtils.isEmpty(courseTarget.getCourseId())){
             wrapper.like("course_id",courseTarget.getCourseId());
         }
-        List<CourseTargetVo> volist = courseTargetService.volist(courseTarget);
+        List<CourseTarget> list = courseTargetService.list(wrapper);
+        return ActionResult.ofSuccess(list);
+    }
 
+    @RequestMapping("/voList")
+    public ActionResult voList(@RequestBody CourseTarget courseTarget){
+        List<CourseTargetVo> volist = courseTargetService.volist(courseTarget);
         return ActionResult.ofSuccess(volist);
     }
 

@@ -24,3 +24,11 @@
 2021-03-07 12:52:38.288  INFO 9624 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2021-03-07 12:52:38.624  INFO 9624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
 2021-03-07 12:52:38.624  INFO 9624 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 8.112 seconds (JVM running for 10.102)
+2021-03-07 12:57:53.469  INFO 9624 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-07 12:57:53.469  INFO 9624 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-07 12:57:53.478  INFO 9624 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2021-03-07 12:57:53.690  INFO 9624 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-07 12:57:53.835  INFO 9624 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-07 19:28:28.173  INFO 9624 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-07 19:28:28.174  INFO 9624 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-07 19:28:28.181  INFO 9624 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

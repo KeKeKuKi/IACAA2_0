@@ -13,7 +13,7 @@
     ref="multipleTable"
     :data="tableData"
     style="width: 100%"
-    height="680"
+    height="750"
     tooltip-effect="dark"
     @selection-change="handleSelectionChange">
     <el-table-column
@@ -103,7 +103,6 @@ export default {
       },
       editForm: {
         id: '',
-        discrible: '',
         name: '',
         courseTasks: [],
       },
@@ -117,10 +116,9 @@ export default {
     getList() {
       const token = localStorage.getItem("token")
       this.loading = true
-      this.$axios.post('course/voList',{
+      this.$axios.post('course/list',{
         pageNum: this.currentPage,
-        pageSize: this.pageSize,
-        word: this.serchForm.word
+        pageSize: this.pageSize
       },{
         headers: {
           token:token
@@ -167,6 +165,9 @@ export default {
       const result = val.map(item => item.id)
       this.ids = result;
     },
+    handleEditForm(row){
+
+    }
   }
 }
 </script>

@@ -6,6 +6,7 @@ import com.pzhu.iacaa2_0.common.ActionResult;
 import com.pzhu.iacaa2_0.entity.CourseTarget;
 import com.pzhu.iacaa2_0.entity.CourseTask;
 import com.pzhu.iacaa2_0.entityVo.CourseTargetVo;
+import com.pzhu.iacaa2_0.entityVo.CourseTaskVo;
 import com.pzhu.iacaa2_0.service.ICourseTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -32,6 +33,7 @@ public class CourseTaskController {
 
     @RequestMapping("/voList")
     public ActionResult voList(@RequestBody CourseTask courseTask){
-        return null;
+        List<CourseTaskVo> courseTaskVos = courseTaskService.voList(courseTask);
+        return ActionResult.ofSuccess(courseTaskVos);
     }
 }
