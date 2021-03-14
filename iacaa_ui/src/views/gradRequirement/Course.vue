@@ -105,20 +105,16 @@ export default {
         id: '',
         name: '',
         courseTasks: [],
-      },
-      addForm: {
-        discrible: '',
-        name: ''
-      },
-      ids: []
+      }
     }
   },methods: {
     getList() {
       const token = localStorage.getItem("token")
       this.loading = true
-      this.$axios.post('course/list',{
+      this.$axios.post('course/voList',{
         pageNum: this.currentPage,
-        pageSize: this.pageSize
+        pageSize: this.pageSize,
+        word: this.serchForm.word
       },{
         headers: {
           token:token

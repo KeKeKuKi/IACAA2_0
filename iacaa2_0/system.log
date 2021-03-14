@@ -1,34 +1,76 @@
-2021-03-07 12:52:31.096  INFO 9624 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 9624 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
-2021-03-07 12:52:31.096  INFO 9624 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
-2021-03-07 12:52:35.305  WARN 9624 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-03-07 12:52:35.336  WARN 9624 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
-2021-03-07 12:52:35.623  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$17cdcca6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.748  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.763  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$df2f397] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.763  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.763  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.794  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:35.794  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.509  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.518  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.519  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.524  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.524  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.553  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.574  INFO 9624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-07 12:52:37.865  INFO 9624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
-2021-03-07 12:52:37.880  INFO 9624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-07 12:52:37.880  INFO 9624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
-2021-03-07 12:52:37.974  INFO 9624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-07 12:52:37.974  INFO 9624 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6800 ms
-2021-03-07 12:52:38.288  INFO 9624 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-07 12:52:38.624  INFO 9624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
-2021-03-07 12:52:38.624  INFO 9624 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 8.112 seconds (JVM running for 10.102)
-2021-03-07 12:57:53.469  INFO 9624 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-07 12:57:53.469  INFO 9624 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-07 12:57:53.478  INFO 9624 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2021-03-07 12:57:53.690  INFO 9624 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-07 12:57:53.835  INFO 9624 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-07 19:28:28.173  INFO 9624 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-07 19:28:28.174  INFO 9624 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-07 19:28:28.181  INFO 9624 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-14 19:21:28.927  INFO 9400 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 9400 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-03-14 19:21:28.934  INFO 9400 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-03-14 19:21:30.026  WARN 9400 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-03-14 19:21:30.117  WARN 9400 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-03-14 19:21:30.687  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$6928d142] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.100  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.112  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$5f4df833] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.115  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.133  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.185  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:31.202  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:32.336 ERROR 9400 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.pzhu.iacaa2_0.mapper.CourseTaskMapper.getByCourseId] is ignored, because it exists, maybe from xml file
+2021-03-14 19:21:32.425  INFO 8612 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Starting Iacaa20Application on DESKTOP-4TL0079 with PID 8612 (F:\毕业设计\IACAA2.0\iacaa2_0\iacaa2_0-admin\target\classes started by MrZhao in F:\毕业设计\IACAA2.0\iacaa2_0)
+2021-03-14 19:21:32.429  INFO 8612 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : The following profiles are active: jdbc
+2021-03-14 19:21:33.264  WARN 8612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-03-14 19:21:33.298  WARN 8612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.pzhu.iacaa2_0]' package. Please check your configuration.
+2021-03-14 19:21:33.708  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroCofig' of type [com.pzhu.iacaa2_0.config.shiro.ShiroCofig$$EnhancerBySpringCGLIB$$d0224878] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.732  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.739  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.741  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.744  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.745  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.772  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.870  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.876  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$c6476f69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.877  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.885  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.916  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.926  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:33.997  INFO 9400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:34.305 ERROR 8612 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.pzhu.iacaa2_0.mapper.CourseTaskMapper.getByCourseId] is ignored, because it exists, maybe from xml file
+2021-03-14 19:21:34.523  INFO 9400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-03-14 19:21:34.534  INFO 9400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-14 19:21:34.534  INFO 9400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-03-14 19:21:34.766  INFO 9400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-14 19:21:34.767  INFO 9400 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5776 ms
+2021-03-14 19:21:35.100  INFO 9400 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-14 19:21:35.395  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.404  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.406  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.410  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.412  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.pzhu.iacaa2_0.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.426  INFO 9400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-03-14 19:21:35.429  INFO 9400 --- [main] com.pzhu.iacaa2_0.Iacaa20Application     : Started Iacaa20Application in 8.002 seconds (JVM running for 9.986)
+2021-03-14 19:21:35.441  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.pzhu.iacaa2_0.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.462  INFO 8612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-14 19:21:35.774  INFO 8612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-03-14 19:21:35.790  INFO 8612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-14 19:21:35.790  INFO 8612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-03-14 19:21:35.929  INFO 8612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-14 19:21:35.930  INFO 8612 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3438 ms
+2021-03-14 19:21:36.376  INFO 8612 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-14 19:21:36.749  INFO 8612 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-14 19:21:36.757  INFO 8612 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-14 19:21:36.764 ERROR 8612 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9999 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9999 or configure this application to listen on another port.
+
+2021-03-14 19:21:36.767  INFO 8612 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-14 19:22:08.453  INFO 9400 --- [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-14 19:22:08.453  INFO 9400 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-14 19:22:08.463  INFO 9400 --- [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2021-03-14 19:22:09.186  INFO 9400 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-14 19:22:09.317  INFO 9400 --- [http-nio-9999-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
