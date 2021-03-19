@@ -28,8 +28,8 @@ public class CourseTask extends BaseEntity {
     /**
      * 描述
      */
-    @TableField("describe")
-    private String describe;
+    @TableField("describes")
+    private String describes;
 
     /**
      * 关联课程
@@ -53,7 +53,7 @@ public class CourseTask extends BaseEntity {
      * 年份
      */
     @TableField("year")
-    private LocalDate year;
+    private Integer year;
 
     /**
      * 系统录入成绩

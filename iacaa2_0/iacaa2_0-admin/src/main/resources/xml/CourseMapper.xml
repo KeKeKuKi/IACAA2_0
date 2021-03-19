@@ -19,7 +19,8 @@
         <result column="edit_user_id" property="editUserId" />
         <result column="created_date" property="createdDate" />
         <result column="update_date" property="updateDate" />
-        <association property="courseTasks" column="id" select="com.pzhu.iacaa2_0.mapper.CourseTaskMapper.getByCourseId"></association>
+        <association property="courseTasks" column="id"
+                     select="com.pzhu.iacaa2_0.mapper.CourseTaskMapper.getByCourseId"/>
     </resultMap>
 
 

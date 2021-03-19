@@ -47,29 +47,53 @@
   </el-table>
   <el-dialog
     title="课程目标编辑"
+    :close-on-click-modal="false"
     :visible.sync="dialogVisible"
-    width="30%">
+    width="75%"
+    center>
     <div>
       <el-form :model="editForm" status-icon ref="ruleForm" class="demo-ruleForm">
-        <el-form-item label="课程编号" prop="name">
-          <el-input type="text" v-model="editForm.name" autocomplete="off"></el-input>
-        </el-form-item>
         <el-form-item label="课程名称" prop="pass">
-          <el-input type="text" v-model="editForm.discrible" autocomplete="off"></el-input>
+          <div style="font-size: 18px;color: #1a1a1a">{{editForm.name}}</div>
         </el-form-item>
         <el-form-item label="课程目标：" prop="pass">
-          <el-button type="primary" round style="" @click="handleAddTarget">添加</el-button>
+          <el-button type="primary" round style="" @click="handleAddCourseTask">添加</el-button>
           <br>
+          <el-table
+            ref="multipleTable"
+            style="width: 100%"
+            height="50"
+            tooltip-effect="dark">
+            <el-table-column
+              prop=""
+              label="课程目标描述"
+              width="770">
+            </el-table-column>
+            <el-table-column
+              prop=""
+              label="支撑指标点"
+              width="490">
+            </el-table-column>
+            <el-table-column
+              prop=""
+              label="权重系数"
+              width="100">
+            </el-table-column>
+          </el-table>
           <span v-for="(item,index) in editForm.courseTasks" type="text" autocomplete="off">
-              <el-input type="text" autocomplete="off" v-model="item.discribe" style="width: 91%;margin-top: 10px"></el-input>
-              <el-button type="danger" icon="el-icon-delete" circle @click="deleteDiscribe(index)"></el-button>
+            <el-input type="text" autocomplete="off" v-model="item.describes" style="width: 55%;margin-top: 10px"></el-input>
+            <el-select v-model="item.target.id" placeholder="可选支撑指标点" clearable style="width: 30%;margin-top: 10px">
+              <el-option v-for="(item1,index1) in ableTarget" :key="index1" :label="item1.target.id + ':' + item1.target.discribe" :value="item1.target.id"></el-option>
+            </el-select>
+            <el-input-number v-model="item.mix" :min="0.1" :max="1" step="0.1" label="权重系数" style="width: 10%;margin-top: 10px"></el-input-number>
+            <el-button type="danger" icon="el-icon-delete" circle @click="deleteDiscribe(index)"></el-button>
           </span>
         </el-form-item>
       </el-form>
     </div>
     <div slot="footer" class="dialog-footer">
       <el-button @click="dialogVisible = false">取 消</el-button>
-      <el-button type="primary" @click="submitEditForm('editForm')">确 定</el-button>
+      <el-button type="primary" @click="submitCourseTasks">确 定</el-button>
     </div>
   </el-dialog>
   <el-pagination
@@ -98,6 +122,7 @@ export default {
       pageSize: 20,
       total : 0,
       currentPage: 1,
+      ableTarget: [],
       serchForm: {
         word: ''
       },
@@ -108,18 +133,30 @@ export default {
       }
     }
   },methods: {
+    submitCourseTasks(){
+      this.loading = true
+      this.$axios.post('courseTask/saveOrUpdate', this.editForm.courseTasks,{}).then(res => {
+        if (res.data.succ) {
+          this.dialogVisible = false;
+          this.$message({
+            message: '修改成功',
+            type: 'success'
+          });
+        }else {
+          this.$message.error(res.data.msg);
+        }
+        this.loading = false
+      }).catch(() => {
+        this.loading = false
+      })
+    },
     getList() {
-      const token = localStorage.getItem("token")
       this.loading = true
       this.$axios.post('course/voList',{
         pageNum: this.currentPage,
         pageSize: this.pageSize,
         word: this.serchForm.word
-      },{
-        headers: {
-          token:token
-        }
-      }).then(res => {
+      },{}).then(res => {
         if (res.data.succ) {
           this.tableData = res.data.data.list
           this.total = res.data.data.total
@@ -162,8 +199,30 @@ export default {
       this.ids = result;
     },
     handleEditForm(row){
-
-    }
+      this.editForm.id = row.id
+      this.editForm.name = row.name
+      this.$axios.post('courseTask/voList',{
+        courseId: row.id
+      },{}).then(res => {
+        if (res.data.succ) {
+          this.editForm.courseTasks = res.data.data
+        }
+      })
+      this.$axios.post('courseTarget/voList',{
+        courseId: row.id
+      },{}).then(res => {
+        if (res.data.succ) {
+          this.ableTarget = res.data.data
+        }
+      })
+      this.dialogVisible = true
+    },
+    handleAddCourseTask() {
+      this.editForm.courseTasks.push({describes:'',course:{id: this.editForm.id},target:{id:'' },mix: ''})
+    },
+    deleteDiscribe(index){
+      this.editForm.courseTasks.splice(index,1)
+    },
   }
 }
 </script>

@@ -71,6 +71,7 @@ public class GradRequirementController extends PageBaseController {
         if(!StringUtils.isEmpty(vo.getYear())){
             wrapper.eq("year",vo.getYear());
         }
+        wrapper.orderByDesc("year","update_date");
         PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
         List<GradRequirement> list = gradRequirementService.list(wrapper);
         PageInfo page = new PageInfo(list);

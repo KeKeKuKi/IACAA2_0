@@ -1,21 +1,19 @@
 package com.pzhu.iacaa2_0.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.pzhu.iacaa2_0.common.ActionResult;
-import com.pzhu.iacaa2_0.entity.CourseTarget;
 import com.pzhu.iacaa2_0.entity.CourseTask;
-import com.pzhu.iacaa2_0.entityVo.CourseTargetVo;
 import com.pzhu.iacaa2_0.entityVo.CourseTaskVo;
 import com.pzhu.iacaa2_0.service.ICourseTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * <p>
@@ -35,5 +33,46 @@ public class CourseTaskController {
     public ActionResult voList(@RequestBody CourseTask courseTask){
         List<CourseTaskVo> courseTaskVos = courseTaskService.voList(courseTask);
         return ActionResult.ofSuccess(courseTaskVos);
+    }
+
+
+    @RequestMapping("/saveOrUpdate")
+    public ActionResult saveOrUpdate(@RequestBody List<CourseTaskVo> courseTasks){
+        List<CourseTask> tasks = new ArrayList<>();
+        Map<String,Double> checkMap = new HashMap();
+        AtomicReference<Boolean> able = new AtomicReference<>(true);
+        courseTasks.forEach(i -> {
+            String key = String.format("%S%S",i.getCourse().getId(),i.getTarget().getId());
+            if(checkMap.get(key) == null){
+                checkMap.put(key,i.getMix());
+            }else {
+                checkMap.put(key, i.getMix() + checkMap.get(key));
+                if(checkMap.get(key) > 1.01D){
+                    able.set(false);
+                }
+                if(checkMap.get(key) < 0.01D){
+                    able.set(false);
+                }
+            }
+            CourseTask courseTask = new CourseTask();
+            courseTask.setUpdateDate(LocalDateTime.now());
+            if(i.getCourseId() != null){
+                courseTask.setId(i.getId());
+            }else {
+                courseTask.setCreatedDate(LocalDateTime.now());
+            }
+            courseTask.setCourseId((int)i.getCourse().getId());
+            courseTask.setMix(i.getMix());
+            courseTask.setTargetId((int)i.getTarget().getId());
+            courseTask.setDescribes(i.getDescribes());
+            courseTask.setYear(LocalDateTime.now().getYear());
+            tasks.add(courseTask);
+        });
+        if(able.get()){
+            boolean b = courseTaskService.saveOrUpdateBatch(tasks);
+            return b ? ActionResult.ofSuccess() : ActionResult.ofFail(200,"更新失败");
+        }else {
+            return ActionResult.ofFail(200,"所支撑单个指标点权重总和需小于1大于0");
+        }
     }
 }

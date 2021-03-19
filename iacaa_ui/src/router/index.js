@@ -3,8 +3,9 @@ import Router from 'vue-router'
 import Layout from '@/views/Layout'
 import Login from '@/views/Login'
 import GradRequirementEdit from '@/views/gradRequirement/GradRequirementEdit'
-import Target from '@/views/gradRequirement/Target'
-import Course from '@/views/gradRequirement/Course'
+import Target from '@/views/target/Target'
+import Course from '@/views/course/Course'
+import CheckLinks from '@/views/course/CheckLinks'
 
 Vue.use(Router)
 
@@ -38,7 +39,12 @@ export default new Router({
           path: 'Course',
           name: 'Course',
           component: Course
-        }
+        },
+        {
+          path: 'CheckLinks',
+          name: 'CheckLinks',
+          component: CheckLinks
+        },
       ]
     },
 

@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = ShiroException.class)
     public ActionResult handler(ShiroException e) {
         log.error("运行时异常：----------------{}", e);
-        return ActionResult.ofFail(401,e.getMessage());
+        return ActionResult.ofFail(401,"权限异常");
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -33,21 +33,21 @@ public class GlobalExceptionHandler {
         BindingResult bindingResult = e.getBindingResult();
         ObjectError objectError = bindingResult.getAllErrors().stream().findFirst().get();
 
-        return ActionResult.ofFail(1001,objectError.getDefaultMessage());
+        return ActionResult.ofFail(1001,"参数异常");
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = IllegalArgumentException.class)
     public ActionResult handler(IllegalArgumentException e) {
         log.error("Assert异常：----------------{}", e);
-        return ActionResult.ofFail(1002,e.getMessage());
+        return ActionResult.ofFail(1002,"Assert异常");
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = RuntimeException.class)
     public ActionResult handler(RuntimeException e) {
         log.error("运行时异常：----------------{}", e);
-        return ActionResult.ofFail(500,e.getMessage());
+        return ActionResult.ofFail(500,"系统异常");
     }
 
 }

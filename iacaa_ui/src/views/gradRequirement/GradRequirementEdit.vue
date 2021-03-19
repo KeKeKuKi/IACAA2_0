@@ -75,14 +75,16 @@
       </el-table-column>
       <el-table-column label="操作" >
         <template slot-scope="scope">
-          <el-button type="primary" icon="el-icon-edit" circle @click="handleEditForm(scope.row)"></el-button>
+          <el-button v-if="tableData[scope.$index].year === new Date().getFullYear()" type="primary" icon="el-icon-edit" circle @click="handleEditForm(scope.row)"></el-button>
       </template>
       </el-table-column>
     </el-table>
     <el-dialog
       title="毕业要求编辑"
       :visible.sync="dialogVisible"
-      width="30%">
+      :close-on-click-modal="false"
+      width="30%"
+      center>
       <div>
         <el-form :model="editForm" status-icon ref="ruleForm" class="demo-ruleForm">
           <el-form-item label="标题" prop="name">
@@ -109,7 +111,9 @@
     <el-dialog
       title="添加年度毕业要求"
       :visible.sync="dialogVisible1"
-      width="30%">
+      :close-on-click-modal="false"
+      width="30%"
+      center>
       <div>
         <el-form :model="addForm" status-icon ref="ruleForm" class="demo-ruleForm">
           <el-form-item label="标题" prop="name">

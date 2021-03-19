@@ -11,16 +11,13 @@
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>毕业达成体系</span>
+          <span>毕业要求体系</span>
         </template>
         <el-menu-item index="1-1">
-          <router-link to="GradRequirementEdit" style="color: white;text-decoration:none">毕业要求体系</router-link>
+          <router-link to="GradRequirementEdit" style="color: white;text-decoration:none">毕业要求</router-link>
         </el-menu-item>
         <el-menu-item index="1-1">
-          <router-link to="Target" style="color: white;text-decoration:none">指标点体系</router-link>
-        </el-menu-item>
-        <el-menu-item index="1-2">
-          <router-link to="Course" style="color: white;text-decoration:none">课程目标体系</router-link>
+          <router-link to="Target" style="color: white;text-decoration:none">指标点</router-link>
         </el-menu-item>
       </el-submenu>
 
@@ -29,16 +26,12 @@
           <i class="el-icon-location"></i>
           <span>课程体系管理</span>
         </template>
-        <el-submenu index="2-1">
-          <template slot="title">课程管理</template>
-          <el-menu-item index="2-1-1">课程管理</el-menu-item>
-          <el-menu-item index="2-1-2">历史数据</el-menu-item>
-        </el-submenu>
-        <el-submenu index="2-2">
-          <template slot="title">成绩管理</template>
-          <el-menu-item index="2-2-1">成绩管理</el-menu-item>
-          <el-menu-item index="2-2-2">历史数据</el-menu-item>
-        </el-submenu>
+        <el-menu-item index="2-1">
+          <router-link to="Course" style="color: white;text-decoration:none">课程目标管理</router-link>
+        </el-menu-item>
+        <el-menu-item index="2-2">
+          <router-link to="CheckLinks" style="color: white;text-decoration:none">考核环节管理</router-link>
+        </el-menu-item>
       </el-submenu>
 
 

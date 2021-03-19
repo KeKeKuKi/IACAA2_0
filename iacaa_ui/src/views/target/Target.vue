@@ -54,7 +54,7 @@
             </el-table-column>
             <el-table-column label="操作" >
               <template slot-scope="scope1">
-                <el-button type="primary" icon="el-icon-edit" circle @click="handleTargetEditForm(scope1.row,scope.row.name)"></el-button>
+                <el-button v-if="scope.row.year === new Date().getFullYear()" type="primary" icon="el-icon-edit" circle @click="handleTargetEditForm(scope1.row,scope.row.name)"></el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -64,14 +64,16 @@
     <el-dialog
       title="指标点支撑编辑"
       :visible.sync="dialogVisible"
-      width="30%">
+      :close-on-click-modal="false"
+      width="30%"
+      center>
       <div>
         <el-form :model="targetEditForm" status-icon ref="ruleForm" class="demo-ruleForm">
           <el-form-item label="毕业要求" prop="name">
-            <el-input type="text" v-model="targetEditForm.reqName" autocomplete="off"></el-input>
+            <el-input disabled type="text" v-model="targetEditForm.reqName" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="指标点" prop="pass">
-            <el-input type="text" v-model="targetEditForm.target" autocomplete="off"></el-input>
+            <el-input disabled type="text" v-model="targetEditForm.target" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="支撑课程：" prop="pass">
               <el-button type="primary" round style="" @click="handleAddTarget">添加</el-button>
@@ -80,7 +82,7 @@
                 <el-select v-model="item.course.id" placeholder="选择课程" clearable filterable style="width: 60%;margin-top: 10px">
                   <el-option v-for="(item1,index1) in courses" :key="index1" :label="item1.name" :value="item1.id"></el-option>
                 </el-select>
-                <el-input type="text" autocomplete="off" v-model="item.mix" style="width: 30%;margin-top: 10px"></el-input>
+                <el-input-number v-model="item.mix" :min="0.1" :max="1" step="0.1" label="权重系数" style="width: 30%;margin-top: 10px"></el-input-number>
                 <el-button type="danger" icon="el-icon-delete" circle @click="deleteDiscribe(index)"></el-button>
               </span>
           </el-form-item>
@@ -231,6 +233,8 @@ export default {
             message: '修改成功',
             type: 'success'
           });
+        }else {
+          this.$message.warning(res.data.msg)
         }
         this.loading = false
       }).catch((e) => {

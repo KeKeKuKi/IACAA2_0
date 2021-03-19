@@ -73,6 +73,7 @@
                 </if>
             </trim>
         </where>
+        order By update_date DESC
     </select>
 
 </mapper>
