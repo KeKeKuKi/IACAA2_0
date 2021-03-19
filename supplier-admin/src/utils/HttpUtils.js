@@ -3,7 +3,7 @@ import { getToken } from '@/utils/auth'
 
 export const supplierConsumer = axios.create({
   // baseURL: 'http://localhost:8182',
-  baseURL: 'localhost:8182/',
+  baseURL: 'http://dev.51ishare.com:8182/',
   withCredentials: false
 })
 

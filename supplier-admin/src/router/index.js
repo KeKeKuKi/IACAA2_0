@@ -49,12 +49,6 @@ export const constantRoutes = [
         component: () => import('@/views/analys/Analys'),
         name: 'analys',
         meta: { title: '时段销售量', icon: 'chart', affix: true }
-      },
-      {
-        path: 'GradRequirementEdit',
-        component: () => import('@/views/gradRequirement/GradRequirementEdit'),
-        name: 'GradRequirementEdit',
-        meta: { title: '毕业要求', icon: 'chart', affix: true }
       }
     ]
   }
